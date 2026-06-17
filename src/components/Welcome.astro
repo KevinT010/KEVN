@@ -1,210 +1,481 @@
 ---
-import astroLogo from '../assets/astro.svg';
-import background from '../assets/background.svg';
+const projects = [
+	{
+		title: "Citygis service dashboard",
+		description: "Description for Citygis service dashboard.",
+		image: "assets/images/citygis.png",
+		link: "https://github.com/Firey-event559/Angular-ServerDashboard",
+	},
+	{
+		title: "Opus Events",
+		description: "Description for project two.",
+		image: "assets/images/opus.png",
+		link: "https://example.com/project2",
+	},
+	{
+		title: "Portfolio Website",
+		description: "Description for project three.",
+		image: "assets/images/project3.jpg",
+		link: "https://example.com/project3",
+	},
+];
+
+const skills = [
+	{
+		type: "language",
+		icon: "assets/images/csharp.svg",
+		skill: "C#",
+		description:
+			"A modern, object-oriented programming language developed by Microsoft.",
+	},
+	{
+		type: "language",
+		icon: "assets/images/js.svg",
+		skill: "JavaScript",
+		description:
+			"A dynamic programming language commonly used for web development.",
+	},
+	{
+		type: "language",
+		icon: "assets/images/typescript.svg",
+		skill: "TypeScript",
+		description: "A superset of JavaScript that adds static types.",
+	},
+	{
+		type: "language",
+		icon: "assets/images/python.svg",
+		skill: "Python",
+		description:
+			"A versatile programming language for web development, data analysis, and more.",
+	},
+	{
+		type: "language",
+		icon: "assets/images/php.svg",
+		skill: "PHP",
+		description:
+			"A server-side scripting language designed primarily for web development.",
+	},
+	{
+		type: "language",
+		icon: "assets/images/css.svg",
+		skill: "CSS3",
+		description:
+			"Style sheet language used for describing the presentation of a document.",
+	},
+	{
+		type: "language",
+		icon: "assets/images/html.svg",
+		skill: "HTML5",
+		description: "The standard markup language for creating web pages.",
+	},
+	{
+		type: "language",
+		icon: "assets/images/mysql.svg",
+		skill: "MySQL",
+		description:
+			"A popular open-source relational database management system.",
+	},
+	{
+		type: "framework",
+		icon: "assets/images/angular.svg",
+		skill: "Angular",
+		description:
+			"A powerful front-end framework for building dynamic web applications.",
+	},
+	{
+		type: "framework",
+		icon: "assets/images/Bootstrap.svg",
+		skill: "Bootstrap",
+		description:
+			"A popular CSS framework for building responsive and mobile-first websites.",
+	},
+	{
+		type: "framework",
+		icon: "assets/images/dotnet.svg",
+		skill: ".Net",
+		description:
+			"A developer platform for building many different types of applications.",
+	},
+	{
+		type: "framework",
+		icon: "assets/images/laravel.svg",
+		skill: "Laravel",
+		description: "A PHP framework for building web applications.",
+	},
+	{
+		type: "framework",
+		icon: "assets/images/tailwind.svg",
+		skill: "Tailwind CSS",
+		description:
+			"A utility-first CSS framework for creating custom designs.",
+	},
+	{
+		type: "tool",
+		icon: "assets/images/figma.svg",
+		skill: "Figma",
+		description: "A web-based UI/UX design application.",
+	},
+	{
+		type: "tool",
+		icon: "assets/images/git.svg",
+		skill: "Git",
+		description:
+			"A distributed version control system for tracking changes in source code.",
+	},
+	{
+		type: "tool",
+		icon: "assets/images/wordpress.svg",
+		skill: "WordPress",
+		description:
+			"A content management system (CMS) for building websites and blogs.",
+	},
+	{
+		type: "tool",
+		icon: "assets/images/github.svg",
+		skill: "GitHub",
+		description:
+			"A platform for version control and collaboration on software projects.",
+	},
+	{
+		type: "tool",
+		icon: "assets/images/vscode.svg",
+		skill: "VSCode",
+		description: "A lightweight, powerful code editor by Microsoft.",
+	},
+	{
+		type: "tool",
+		icon: "assets/images/trello.svg",
+		skill: "Trello",
+		description:
+			"A project management tool for organizing tasks and workflows.",
+	},
+	{
+		type: "tool",
+		icon: "assets/images/raspberrypi.svg",
+		skill: "Raspberry Pi",
+		description:
+			"A small single-board computer for various computing projects.",
+	},
+];
+
+const birthDate = new Date(2002, 4, 2);
+const today = new Date();
+let age = today.getFullYear() - birthDate.getFullYear();
+const m = today.getMonth() - birthDate.getMonth();
+if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+	age--;
+}
 ---
 
-<div id="container">
-	<img id="background" src={background.src} alt="" fetchpriority="high" />
-	<main>
-		<section id="hero">
-			<a href="https://astro.build"
-				><img src={astroLogo.src} width="115" height="48" alt="Astro Homepage" /></a
+<section
+	class="h-[100vh] flex items-center justify-center text-white px-8 lg:px-61 relative overflow-hidden bg-cover bg-center"
+>
+	<div class="absolute inset-0"></div>
+	<div
+		class="relative max-w-7xl flex flex-col md:flex-row items-center justify-center md:items-center gap-12 h-full w-full text-center"
+	>
+		<div class="flex-1 flex flex-col items-center">
+			<h1
+				class="text-5xl md:text-6xl font-extrabold leading-tight text-center"
 			>
-			<h1>
-				To get started, open the <code><pre>src/pages</pre></code> directory in your project.
+				Hi, I’m Kevin<br />
+				<span
+					class="bg-gradient-to-r from-[#722EFA] via-[#c084fc] to-[#a084fa] bg-clip-text text-transparent"
+				>
+					A software developer
+				</span>
 			</h1>
-			<section id="links">
-				<a class="button" href="https://docs.astro.build">Read our docs</a>
-				<a href="https://astro.build/chat"
-					>Join our Discord <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 127.14 96.36"
-						><path
-							fill="currentColor"
-							d="M107.7 8.07A105.15 105.15 0 0 0 81.47 0a72.06 72.06 0 0 0-3.36 6.83 97.68 97.68 0 0 0-29.11 0A72.37 72.37 0 0 0 45.64 0a105.89 105.89 0 0 0-26.25 8.09C2.79 32.65-1.71 56.6.54 80.21a105.73 105.73 0 0 0 32.17 16.15 77.7 77.7 0 0 0 6.89-11.11 68.42 68.42 0 0 1-10.85-5.18c.91-.66 1.8-1.34 2.66-2a75.57 75.57 0 0 0 64.32 0c.87.71 1.76 1.39 2.66 2a68.68 68.68 0 0 1-10.87 5.19 77 77 0 0 0 6.89 11.1 105.25 105.25 0 0 0 32.19-16.14c2.64-27.38-4.51-51.11-18.9-72.15ZM42.45 65.69C36.18 65.69 31 60 31 53s5-12.74 11.43-12.74S54 46 53.89 53s-5.05 12.69-11.44 12.69Zm42.24 0C78.41 65.69 73.25 60 73.25 53s5-12.74 11.44-12.74S96.23 46 96.12 53s-5.04 12.69-11.43 12.69Z"
-						></path></svg
+			<p class="mt-6 text-lg text-gray-400 max-w-2xl text-center">
+				Versatile developer specializing in web and software
+				development, from front-end frameworks to backend APIs.
+			</p>
+			<div class="mt-8 flex justify-center md:justify-start gap-6">
+				<a
+					href="mailto:Troostkevin8@gmail.com"
+					aria-label="Email"
+					class="text-gray-400 hover:text-white transition-colors duration-300"
+				>
+					<svg
+						class="w-7 h-7"
+						viewBox="0 -31.5 256 256"
+						version="1.1"
+						xmlns="http://www.w3.org/2000/svg"
+						preserveAspectRatio="xMidYMid"
+						fill="currentColor"
 					>
+						<g>
+							<path
+								d="M58.1818182,192.049515 L58.1818182,93.1404244 L27.5066233,65.0770089 L0,49.5040608 L0,174.59497 C0,184.253152 7.82545455,192.049515 17.4545455,192.049515 L58.1818182,192.049515 Z"
+							></path>
+							<path
+								d="M197.818182,192.049515 L238.545455,192.049515 C248.203636,192.049515 256,184.224061 256,174.59497 L256,49.5040608 L224.844415,67.3422767 L197.818182,93.1404244 L197.818182,192.049515 Z"
+							></path>
+							<polygon
+								points="58.1818182 93.1404244 54.0077618 54.4932827 58.1818182 17.5040608 128 69.8676972 197.818182 17.5040608 202.487488 52.4960089 197.818182 93.1404244 128 145.504061"
+							></polygon>
+							<path
+								d="M197.818182,17.5040608 L197.818182,93.1404244 L256,49.5040608 L256,26.2313335 C256,4.64587897 231.36,-7.65957557 214.109091,5.28587897 L197.818182,17.5040608 Z"
+							></path>
+							<path
+								d="M0,49.5040608 L26.7588051,69.5731646 L58.1818182,93.1404244 L58.1818182,17.5040608 L41.8909091,5.28587897 C24.6109091,-7.65957557 0,4.64587897 0,26.2313335 L0,49.5040608 Z"
+							></path>
+						</g>
+					</svg>
 				</a>
-			</section>
-		</section>
-	</main>
+				<a
+					href="https://github.com/KevinT010"
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label="GitHub"
+					class="text-gray-400 hover:text-white transition-colors duration-300"
+				>
+					<svg
+						class="w-7 h-7"
+						fill="currentColor"
+						viewBox="0 0 24 24"
+					>
+						<path
+							d="M12 2C6.477 2 2 6.484 2 12.021c0 4.428 2.867 8.184 6.839 9.504.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.221-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.254-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.295 2.748-1.025 2.748-1.025.546 1.378.202 2.396.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.847-2.337 4.695-4.566 4.944.36.31.68.921.68 1.857 0 1.34-.012 2.42-.012 2.75 0 .267.18.579.688.48C19.135 20.2 22 16.447 22 12.021 22 6.484 17.523 2 12 2z"
+						></path>
+					</svg>
+				</a>
+				<a
+					href="https://www.linkedin.com/in/kevin-troost-24b701225/"
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label="LinkedIn"
+					class="text-gray-400 hover:text-white transition-colors duration-300"
+				>
+					<svg
+						class="w-7 h-7"
+						version="1.1"
+						viewBox="0 0 382 382"
+						fill="currentColor"
+					>
+						<path
+							d="M347.445,0H34.555C15.471,0,0,15.471,0,34.555v312.889C0,366.529,15.471,382,34.555,382h312.889 C366.529,382,382,366.529,382,347.444V34.555C382,15.471,366.529,0,347.445,0z M118.207,329.844c0,5.554-4.502,10.056-10.056,10.056 H65.345c-5.554,0-10.056-4.502-10.056-10.056V150.403c0-5.554,4.502-10.056,10.056-10.056h42.806 c5.554,0,10.056,4.502,10.056,10.056V329.844z M86.748,123.432c-22.459,0-40.666-18.207-40.666-40.666S64.289,42.1,86.748,42.1 s40.666,18.207,40.666,40.666S109.208,123.432,86.748,123.432z M341.91,330.654c0,5.106-4.14,9.246-9.246,9.246H286.73 c-5.106,0-9.246-4.14-9.246-9.246v-84.168c0-12.556,3.683-55.021-32.813-55.021c-28.309,0-34.051,29.066-35.204,42.11v97.079 c0,5.106-4.139,9.246-9.246,9.246h-44.426c-5.106,0-9.246-4.14-9.246-9.246V149.593c0-5.106,4.14-9.246,9.246-9.246h44.426 c5.106,0,9.246,4.14,9.246,9.246v15.655c10.497-15.753,26.097-27.912,59.312-27.912c73.552,0,73.131,68.716,73.131,106.472 L341.91,330.654L341.91,330.654z"
+						></path>
+					</svg>
+				</a>
+			</div>
+		</div>
+	</div>
+</section>
 
-	<a href="https://astro.build/blog/astro-6-beta/" id="news" class="box">
-		<svg width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"
-			><path
-				d="M24.667 12c1.333 1.414 2 3.192 2 5.334 0 4.62-4.934 5.7-7.334 12C18.444 28.567 18 27.456 18 26c0-4.642 6.667-7.053 6.667-14Zm-5.334-5.333c1.6 1.65 2.4 3.43 2.4 5.333 0 6.602-8.06 7.59-6.4 17.334C13.111 27.787 12 25.564 12 22.666c0-4.434 7.333-8 7.333-16Zm-6-5.333C15.111 3.555 16 5.556 16 7.333c0 8.333-11.333 10.962-5.333 22-3.488-.774-6-4-6-8 0-8.667 8.666-10 8.666-20Z"
-				fill="#111827"></path></svg
-		>
-		<h2>What's New in Astro 6.0?</h2>
-		<p>
-			Redesigned dev server, fonts, live collections, built-in CSP support, and more! Click to
-			explore Astro 6.0's new features.
-		</p>
-	</a>
-</div>
+<section class="px-8 lg:px-60" id="1">
+	<div class="flex flex-col items-center mb-10 text-center">
+				<span class="text-[#8b5cf6] text-sm font-bold tracking-widest uppercase mb-3">Get to know me</span>
+		<h2 class="text-4xl md:text-5xl text-white font-bold">About Me</h2>
+	</div>
 
-<style>
-	#background {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: -1;
-		filter: blur(100px);
-	}
+	<div class="max-w-4xl mx-auto rounded-2xl border border-gray-800/60 bg-[#0f111a] shadow-2xl">
+		<div class="p-8 md:p-12">
+			<p class="text-gray-300 leading-relaxed text-[15px] mb-12">
+				Hi, I’m Kevin — a software developer specializing in
+				front-end, back-end and multiple frameworks. I enjoy
+				creating cool looking webpages with a beautiful design. I’ve
+				worked on everything from interactive dashboards to event
+				pages, always with a focus on clean, user friendly design.
+			</p>
 
-	#container {
-		font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
-		height: 100%;
-	}
+			<div class="h-px w-full bg-gradient-to-r from-transparent via-[#8b5cf6]/50 to-transparent my-10"></div>
 
-	main {
-		height: 100%;
-		display: flex;
-		justify-content: center;
-	}
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-y-8 gap-x-12">
+				<div class="flex items-center gap-5">
+					<div class="w-12 h-12 rounded-xl bg-[#1e2336] flex items-center justify-center text-[#8b5cf6] shrink-0">
+						<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+					</div>
+					<div>
+						<p class="text-white font-semibold text-base">Role</p>
+						<p class="text-gray-400 text-sm mt-1">Software Developer</p>
+					</div>
+				</div>
 
-	#hero {
-		display: flex;
-		align-items: start;
-		flex-direction: column;
-		justify-content: center;
-		padding: 16px;
-	}
+				<div class="flex items-center gap-5">
+					<div class="w-12 h-12 rounded-xl bg-[#1e2336] flex items-center justify-center text-[#8b5cf6] shrink-0">
+						<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+					</div>
+					<div>
+						<p class="text-white font-semibold text-base">Location</p>
+						<p class="text-gray-400 text-sm mt-1">Rotterdam, Netherlands</p>
+					</div>
+				</div>
 
-	h1 {
-		font-size: 22px;
-		margin-top: 0.25em;
-	}
+				<div class="flex items-center gap-5">
+					<div class="w-12 h-12 rounded-xl bg-[#1e2336] flex items-center justify-center text-[#8b5cf6] shrink-0">
+						<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+					</div>
+					<div>
+						<p class="text-white font-semibold text-base">Degree</p>
+						<p class="text-gray-400 text-sm mt-1">Software developer - Techniek College Rotterdam</p>
+					</div>
+				</div>
 
-	#links {
-		display: flex;
-		gap: 16px;
-	}
+				<div class="flex items-center gap-5">
+					<div class="w-12 h-12 rounded-xl bg-[#1e2336] flex items-center justify-center text-[#8b5cf6] shrink-0">
+						<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 14l9-5-9-5-9 5 9 5z"></path><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"></path></svg>
+					</div>
+					<div>
+						<p class="text-white font-semibold text-base">Education</p>
+						<p class="text-gray-400 text-sm mt-1">Informatica - Rotterdam University of Applied Sciences</p>
+					</div>
+				</div>
 
-	#links a {
-		display: flex;
-		align-items: center;
-		padding: 10px 12px;
-		color: #111827;
-		text-decoration: none;
-		transition: color 0.2s;
-	}
+				
+			</div>
+		</div>
+	</div>
+</section>
 
-	#links a:hover {
-		color: rgb(78, 80, 86);
-	}
+<div class="mt-24"></div>
 
-	#links a svg {
-		height: 1em;
-		margin-left: 8px;
-	}
+<section class="px-8 lg:px-60 py-20 overflow-hidden text-white" id="2">
+	<div
+		class="flex flex-col lg:flex-row gap-12 lg:gap-20 max-w-7xl mx-auto items-center"
+	>
+		<div class="flex-1 space-y-8">
+			<div class="flex gap-4">
+				<div>
+					<h2 class="text-4xl lg:text-5xl font-bold leading-tight">
+						My programming<br />
+						<span id="dynamic-title">Languages</span>
+					</h2>
+				</div>
+			</div>
 
-	#links a.button {
-		color: white;
-		background: linear-gradient(83.21deg, #3245ff 0%, #bc52ee 100%);
-		box-shadow:
-			inset 0 0 0 1px rgba(255, 255, 255, 0.12),
-			inset 0 -2px 0 rgba(0, 0, 0, 0.24);
-		border-radius: 10px;
-	}
+			<p class="text-gray-400 text-lg leading-relaxed max-w-md">
+				I develop simple, intuitive and responsive user interfaces that
+				help users get things done with less effort.
+			</p>
 
-	#links a.button:hover {
-		color: rgb(230, 230, 230);
-		box-shadow: none;
-	}
+			<div
+				class="inline-flex flex-wrap justify-center rounded-3xl sm:rounded-full p-1.5 border border-white/5 shadow-inner"
+				style="background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(255, 255, 255, 0.03) 100%);"
+			>
+				<button
+					data-tab="language"
+					class="tab-btn px-6 py-2.5 rounded-full font-medium transition-all duration-300 text-sm sm:text-base bg-gradient-to-r from-[#8b5cf6] to-[#c084fc] text-white"
+				>
+					Languages
+				</button>
+				<button
+					data-tab="framework"
+					class="tab-btn px-6 py-2.5 rounded-full font-medium transition-all duration-300 text-sm sm:text-base text-gray-400"
+				>
+					Frameworks
+				</button>
+				<button
+					data-tab="tool"
+					class="tab-btn px-6 py-2.5 rounded-full font-medium transition-all duration-300 text-sm sm:text-base text-gray-400"
+				>
+					Tools
+				</button>
+			</div>
+		</div>
 
-	pre {
-		font-family:
-			ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono',
-			monospace;
-		font-weight: normal;
-		background: linear-gradient(14deg, #d83333 0%, #f041ff 100%);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
-		margin: 0;
-	}
+		<div class="flex-1 w-full">
+			<div
+				class="flex flex-wrap gap-5 justify-center lg:justify-end min-h-[300px] content-start"
+			>
+				{
+					skills.map((item) => (
+						<div
+							data-type={item.type}
+							class="skill-item group w-20 h-20 sm:w-24 sm:h-24 rounded-2xl flex items-center justify-center cursor-pointer transition-all duration-500 ease-in-out border border-white/5 hover:!scale-110 hover:shadow-xl hover:z-10 relative"
+							style="background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(255, 255, 255, 0.03) 100%); box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);"
+						>
+							<span class="absolute bottom-full mb-3 left-1/2 -translate-x-1/2 px-2 py-1 rounded-md shadow-lg text-white bg-gray-900/90 text-xs font-semibold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-20">
+								{item.skill}
+							</span>
+							<img
+								src={item.icon}
+								alt={item.skill}
+								class="w-10 h-10 sm:w-12 sm:h-12 object-contain"
+							/>
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</div>
+</section>
 
-	h2 {
-		margin: 0 0 1em;
-		font-weight: normal;
-		color: #111827;
-		font-size: 20px;
-	}
-
-	p {
-		color: #4b5563;
-		font-size: 16px;
-		line-height: 24px;
-		letter-spacing: -0.006em;
-		margin: 0;
-	}
-
-	code {
-		display: inline-block;
-		background:
-			linear-gradient(66.77deg, #f3cddd 0%, #f5cee7 100%) padding-box,
-			linear-gradient(155deg, #d83333 0%, #f041ff 18%, #f5cee7 45%) border-box;
-		border-radius: 8px;
-		border: 1px solid transparent;
-		padding: 6px 8px;
-	}
-
-	.box {
-		padding: 16px;
-		background: rgba(255, 255, 255, 1);
-		border-radius: 16px;
-		border: 1px solid white;
-	}
-
-	#news {
-		position: absolute;
-		bottom: 16px;
-		right: 16px;
-		max-width: 300px;
-		text-decoration: none;
-		transition: background 0.2s;
-		backdrop-filter: blur(50px);
-	}
-
-	#news:hover {
-		background: rgba(255, 255, 255, 0.55);
-	}
-
-	@media screen and (max-height: 368px) {
-		#news {
-			display: none;
+<section class="px-8 lg:px-60 mb-24" id="3">
+	<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+		{
+			projects.map((project) => (
+				<div
+					class="rounded-2xl overflow-hidden shadow-lg"
+					style="background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(255, 255, 255, 0.03) 100%); backdrop-filter: blur(8px); box-shadow: 0 4px 24px rgba(41, 7, 51, 0.08);"
+				>
+					<img
+						src={project.image}
+						alt={project.title}
+						class="w-full h-54 object-contain"
+					/>
+					<div class="p-6">
+						<h2 class="text-xl text-white font-bold mb-2">
+							{project.title}
+						</h2>
+						<p class="text-gray-300 mb-4">{project.description}</p>
+						<a
+							href={project.link}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="inline-block bg-gradient-to-r from-[#8b5cf6] to-[#c084fc] text-white px-4 py-2 rounded-lg hover:opacity-90 transition-opacity"
+						>
+							View Project
+						</a>
+					</div>
+				</div>
+			))
 		}
-	}
+	</div>
+</section>
 
-	@media screen and (max-width: 768px) {
-		#container {
-			display: flex;
-			flex-direction: column;
-		}
+<script>
+	const tabBtns = document.querySelectorAll<HTMLButtonElement>(".tab-btn");
+	const skillItems = document.querySelectorAll<HTMLElement>(".skill-item");
+	const dynamicTitle = document.getElementById("dynamic-title");
 
-		#hero {
-			display: block;
-			padding-top: 10%;
+	skillItems.forEach((item) => {
+		if (item.getAttribute("data-type") !== "language") {
+			(item as HTMLElement).style.display = "none";
 		}
+	});
 
-		#links {
-			flex-wrap: wrap;
-		}
+	tabBtns.forEach((btn) => {
+		btn.addEventListener("click", () => {
+			const selectedTab = btn.getAttribute("data-tab");
 
-		#links a.button {
-			padding: 14px 18px;
-		}
+			if (dynamicTitle) {
+				dynamicTitle.textContent = btn.textContent.trim();
+			}
 
-		#news {
-			right: 16px;
-			left: 16px;
-			bottom: 2.5rem;
-			max-width: 100%;
-		}
+			tabBtns.forEach((b) => {
+				b.classList.remove(
+					"bg-gradient-to-r",
+					"from-[#8b5cf6]",
+					"to-[#c084fc]",
+					"text-white",
+				);
+				b.classList.add("text-gray-400");
+			});
+			btn.classList.remove("text-gray-400");
+			btn.classList.add(
+				"bg-gradient-to-r",
+				"from-[#8b5cf6]",
+				"to-[#c084fc]",
+				"text-white",
+			);
 
-		h1 {
-			line-height: 1.5;
-		}
-	}
-</style>
+			skillItems.forEach((item) => {
+				if (item.getAttribute("data-type") === selectedTab) {
+					item.style.display = "flex";
+				} else {
+					item.style.display = "none";
+				}
+			});
+		});
+	});
+</script>

@@ -1,3 +1,13 @@
+---
+import Navbar from '../components/Navbar.astro';
+
+interface Props {
+	eagerReveal?: boolean;
+}
+
+const { eagerReveal } = Astro.props;
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -8,7 +18,9 @@
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro Basics</title>
 	</head>
-	<body>
+	<body class="min-h-screen bg-[#030207] text-white antialiased relative" data-eager-reveal={eagerReveal ? '' : undefined}>
+		<div class="absolute top-0 left-0 w-full h-[800px] bg-gradient-to-b from-[#7c3aed] to-[#030207] -z-10 pointer-events-none"></div>
+		<Navbar />
 		<slot />
 	</body>
 </html>

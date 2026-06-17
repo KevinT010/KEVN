@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+.vivid-purple-bg {
+  background: linear-gradient(to bottom, #7c3aed 0%, #020617 100%);
+  color: #ffffff;
+}
