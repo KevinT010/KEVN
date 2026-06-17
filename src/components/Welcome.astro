@@ -1,22 +1,42 @@
 ---
+const getYearsOfExperience = () => {
+	const today = new Date();
+	const currentYear = today.getFullYear();
+	const startYear = 2022;
+	const startMonth = 8;
+	
+	let yearsExp = currentYear - startYear;
+	
+	if (today.getMonth() < startMonth) {
+		yearsExp -= 1;
+	}
+	
+	return yearsExp;
+};
+
+const yearsOfExperience = getYearsOfExperience();
+
 const projects = [
 	{
 		title: "Citygis service dashboard",
-		description: "Description for Citygis service dashboard.",
-		image: "assets/images/citygis.png",
+		year: "2025",
+		description: "Description for Citygis service dashboard. A complete redesign focused on fast, intuitive user experiences.",
 		link: "https://github.com/Firey-event559/Angular-ServerDashboard",
+		tags: ["Angular", "TypeScript", "Tailwind CSS", "Docker", "Grafana"],
 	},
 	{
 		title: "Opus Events",
-		description: "Description for project two.",
-		image: "assets/images/opus.png",
+		year: "2024",
+		description: "Description for project two. A full-stack event management platform built to scale.",
 		link: "https://example.com/project2",
+		tags: ["PHP", "Laravel", "MySQL"],
 	},
 	{
 		title: "Portfolio Website",
-		description: "Description for project three.",
-		image: "assets/images/project3.jpg",
+		year: "2026",
+		description: "Description for project three. My personal space on the internet, showcasing my projects and skills.",
 		link: "https://example.com/project3",
+		tags: ["Astro", "Tailwind CSS"],
 	},
 ];
 
@@ -58,14 +78,14 @@ const skills = [
 	{
 		type: "language",
 		icon: "assets/images/css.svg",
-		skill: "CSS3",
+		skill: "CSS",
 		description:
 			"Style sheet language used for describing the presentation of a document.",
 	},
 	{
 		type: "language",
 		icon: "assets/images/html.svg",
-		skill: "HTML5",
+		skill: "HTML",
 		description: "The standard markup language for creating web pages.",
 	},
 	{
@@ -105,9 +125,16 @@ const skills = [
 	{
 		type: "framework",
 		icon: "assets/images/tailwind.svg",
-		skill: "Tailwind CSS",
+		skill: "Tailwind",
 		description:
 			"A utility-first CSS framework for creating custom designs.",
+	},
+	{
+		type: "framework",
+		icon: "assets/images/astro.png",
+		skill: "Astro",
+		description:
+			"A modern front-end framework for building fast, content-focused websites.",
 	},
 	{
 		type: "tool",
@@ -262,66 +289,153 @@ if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
 	</div>
 </section>
 
-<section class="px-8 lg:px-60" id="1">
+<section class="px-8" id="1">
 	<div class="flex flex-col items-center mb-10 text-center">
-				<span class="text-[#8b5cf6] text-sm font-bold tracking-widest uppercase mb-3">Get to know me</span>
+		<span
+			class="text-[#8b5cf6] text-sm font-bold tracking-widest uppercase mb-3"
+			>Get to know me</span
+		>
 		<h2 class="text-4xl md:text-5xl text-white font-bold">About Me</h2>
 	</div>
 
-	<div class="max-w-4xl mx-auto rounded-2xl border border-gray-800/60 bg-[#0f111a] shadow-2xl">
+	<div class="max-w-7xl mx-auto rounded-2xl bg-[#0B0A11] shadow-2xl">
 		<div class="p-8 md:p-12">
 			<p class="text-gray-300 leading-relaxed text-[15px] mb-12">
-				Hi, I’m Kevin — a software developer specializing in
-				front-end, back-end and multiple frameworks. I enjoy
-				creating cool looking webpages with a beautiful design. I’ve
-				worked on everything from interactive dashboards to event
-				pages, always with a focus on clean, user friendly design.
+				Hi, I’m Kevin — a software developer specializing in front-end,
+				back-end and multiple frameworks. I enjoy creating cool looking
+				webpages with a beautiful design. I’ve worked on everything from
+				interactive dashboards to event pages, always with a focus on
+				clean, user friendly design.
 			</p>
 
-			<div class="h-px w-full bg-gradient-to-r from-transparent via-[#8b5cf6]/50 to-transparent my-10"></div>
+			<div
+				class="h-px w-full bg-gradient-to-r from-transparent via-[#8b5cf6]/50 to-transparent my-10"
+			>
+			</div>
 
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-y-8 gap-x-12">
 				<div class="flex items-center gap-5">
-					<div class="w-12 h-12 rounded-xl bg-[#1e2336] flex items-center justify-center text-[#8b5cf6] shrink-0">
-						<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+					<div
+						class="w-12 h-12 rounded-xl bg-[#1e2336] flex items-center justify-center text-[#8b5cf6] shrink-0"
+					>
+						<svg
+							class="w-5 h-5"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M12 8v4l3 3"
+							/>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+							/>
+						</svg>
 					</div>
 					<div>
-						<p class="text-white font-semibold text-base">Role</p>
-						<p class="text-gray-400 text-sm mt-1">Software Developer</p>
+						<p class="text-white font-semibold text-base">Years of experience</p>
+						<p class="text-gray-400 text-sm mt-1">
+							{yearsOfExperience}+ years
+						</p>
 					</div>
 				</div>
 
 				<div class="flex items-center gap-5">
-					<div class="w-12 h-12 rounded-xl bg-[#1e2336] flex items-center justify-center text-[#8b5cf6] shrink-0">
-						<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+					<div
+						class="w-12 h-12 rounded-xl bg-[#1e2336] flex items-center justify-center text-[#8b5cf6] shrink-0"
+					>
+						<svg
+							class="w-5 h-5"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+							xmlns="http://www.w3.org/2000/svg"
+							><path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+							></path><path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+							></path></svg
+						>
 					</div>
 					<div>
-						<p class="text-white font-semibold text-base">Location</p>
-						<p class="text-gray-400 text-sm mt-1">Rotterdam, Netherlands</p>
+						<p class="text-white font-semibold text-base">
+							Location
+						</p>
+						<p class="text-gray-400 text-sm mt-1">
+							Rotterdam, Netherlands
+						</p>
 					</div>
 				</div>
 
 				<div class="flex items-center gap-5">
-					<div class="w-12 h-12 rounded-xl bg-[#1e2336] flex items-center justify-center text-[#8b5cf6] shrink-0">
-						<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+					<div
+						class="w-12 h-12 rounded-xl bg-[#1e2336] flex items-center justify-center text-[#8b5cf6] shrink-0"
+					>
+						<svg
+							class="w-5 h-5"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+							xmlns="http://www.w3.org/2000/svg"
+							><path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+							></path></svg
+						>
 					</div>
 					<div>
 						<p class="text-white font-semibold text-base">Degree</p>
-						<p class="text-gray-400 text-sm mt-1">Software developer - Techniek College Rotterdam</p>
+						<p class="text-gray-400 text-sm mt-1">
+							Software developer - Techniek College Rotterdam
+						</p>
 					</div>
 				</div>
 
 				<div class="flex items-center gap-5">
-					<div class="w-12 h-12 rounded-xl bg-[#1e2336] flex items-center justify-center text-[#8b5cf6] shrink-0">
-						<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 14l9-5-9-5-9 5 9 5z"></path><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"></path></svg>
+					<div
+						class="w-12 h-12 rounded-xl bg-[#1e2336] flex items-center justify-center text-[#8b5cf6] shrink-0"
+					>
+						<svg
+							class="w-6 h-6"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+							xmlns="http://www.w3.org/2000/svg"
+							><path d="M12 14l9-5-9-5-9 5 9 5z"></path><path
+								d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
+							></path><path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
+							></path></svg
+						>
 					</div>
 					<div>
-						<p class="text-white font-semibold text-base">Education</p>
-						<p class="text-gray-400 text-sm mt-1">Informatica - Rotterdam University of Applied Sciences</p>
+						<p class="text-white font-semibold text-base">
+							Education
+						</p>
+						<p class="text-gray-400 text-sm mt-1">
+							Informatica - Rotterdam University of Applied
+							Sciences
+						</p>
 					</div>
 				</div>
-
-				
 			</div>
 		</div>
 	</div>
@@ -349,8 +463,7 @@ if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
 			</p>
 
 			<div
-				class="inline-flex flex-wrap justify-center rounded-3xl sm:rounded-full p-1.5 border border-white/5 shadow-inner"
-				style="background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(255, 255, 255, 0.03) 100%);"
+				class="inline-flex flex-wrap justify-center rounded-3xl sm:rounded-full p-1.5  shadow-inner bg-[#0B0A11]"
 			>
 				<button
 					data-tab="language"
@@ -374,24 +487,21 @@ if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
 		</div>
 
 		<div class="flex-1 w-full">
-			<div
-				class="flex flex-wrap gap-5 justify-center lg:justify-end min-h-[300px] content-start"
-			>
+			<div class="flex flex-wrap justify-center lg:justify-end gap-3 lg:gap-4 min-h-[300px] content-start lg:max-w-[512px] ml-auto">
 				{
 					skills.map((item) => (
 						<div
 							data-type={item.type}
-							class="skill-item group w-20 h-20 sm:w-24 sm:h-24 rounded-2xl flex items-center justify-center cursor-pointer transition-all duration-500 ease-in-out border border-white/5 hover:!scale-110 hover:shadow-xl hover:z-10 relative"
-							style="background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(255, 255, 255, 0.03) 100%); box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);"
+							class="skill-item group h-14 sm:h-16 lg:h-20 w-36 lg:w-40 px-3 lg:px-4 rounded-2xl flex items-center gap-2 lg:gap-3 cursor-pointer transition-all duration-500 ease-in-out bg-[#0B0A11] hover:!scale-110 hover:shadow-2xl hover:z-10 relative"
 						>
-							<span class="absolute bottom-full mb-3 left-1/2 -translate-x-1/2 px-2 py-1 rounded-md shadow-lg text-white bg-gray-900/90 text-xs font-semibold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-20">
-								{item.skill}
-							</span>
 							<img
 								src={item.icon}
 								alt={item.skill}
-								class="w-10 h-10 sm:w-12 sm:h-12 object-contain"
+								class="w-7 h-7 sm:w-8 sm:h-8 lg:w-10 lg:h-10 object-contain shrink-0"
 							/>
+							<span class="text-white font-semibold text-xs sm:text-sm lg:text-base whitespace-normal break-words leading-tight">
+								{item.skill}
+							</span>
 						</div>
 					))
 				}
@@ -400,36 +510,56 @@ if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
 	</div>
 </section>
 
-<section class="px-8 lg:px-60 mb-24" id="3">
-	<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-		{
-			projects.map((project) => (
-				<div
-					class="rounded-2xl overflow-hidden shadow-lg"
-					style="background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(255, 255, 255, 0.03) 100%); backdrop-filter: blur(8px); box-shadow: 0 4px 24px rgba(41, 7, 51, 0.08);"
-				>
-					<img
-						src={project.image}
-						alt={project.title}
-						class="w-full h-54 object-contain"
-					/>
-					<div class="p-6">
-						<h2 class="text-xl text-white font-bold mb-2">
+<section class="px-8 lg:px-60 mb-24 mt-32" id="3">
+	<div class="max-w-7xl mx-auto w-full">
+		<div class="flex flex-col items-center mb-10 text-center">
+			<span
+				class="text-[#8b5cf6] text-sm font-bold tracking-widest uppercase mb-3"
+				>A selection of recent work
+			</span>
+			<h2 class="text-4xl md:text-5xl text-white font-bold">Projects I've built</h2>
+		</div>
+
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+			{
+				projects.map((project) => (
+					<div class="rounded-2xl bg-[#0B0A11] p-6 lg:p-8 transition-all duration-500 ease-in-out hover:scale-102 hover:shadow-2xl hover:z-10 relative flex flex-col h-full group shadow-lg">
+						<div class="flex justify-between items-start mb-6">
+							<div class="w-10 h-10 rounded-lg bg-[#1e2336] flex items-center justify-center text-[#8b5cf6]">
+								<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+							</div>
+							<a href={project.link} target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-white transition-colors" aria-label="View Project">
+								<svg class="w-5 h-5  transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+							</a>
+						</div>
+						
+						<h3 class="text-xl md:text-2xl text-white font-bold mb-3 flex items-baseline gap-3">
 							{project.title}
-						</h2>
-						<p class="text-gray-300 mb-4">{project.description}</p>
-						<a
-							href={project.link}
-							target="_blank"
-							rel="noopener noreferrer"
-							class="inline-block bg-gradient-to-r from-[#8b5cf6] to-[#c084fc] text-white px-4 py-2 rounded-lg hover:opacity-90 transition-opacity"
-						>
-							View Project
-						</a>
+							<span class="text-sm font-normal text-gray-500">{project.year}</span>
+						</h3>
+						
+						<p class="text-gray-400 mb-8 flex-grow leading-relaxed">
+							{project.description}
+						</p>
+						
+						<div class="flex flex-wrap gap-2 sm:gap-3 mt-auto">
+							{project.tags && project.tags.map(tag => (
+								<span class="bg-[#1e2336]/40 border border-[#8b5cf6]/20 text-[#c084fc] text-xs font-medium px-3 py-1.5 rounded-md">
+									#{tag}
+								</span>
+							))}
+						</div>
 					</div>
-				</div>
-			))
-		}
+				))
+			}
+		</div>
+
+		<div class="flex justify-center">
+			<a href="https://github.com/KevinT010" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2  text-white px-6 py-3 rounded-xl transition-colors duration-300 bg-[#0B0A11] text-white">
+				View all projects
+				<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+			</a>
+		</div>
 	</div>
 </section>
 
